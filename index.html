@@ -173,9 +173,9 @@ h1 .gold{
 /* ===== CTA ===== */
 .cta-wrap{ padding-top:11px; }
 .btn{
-  width:100%; border:0; cursor:pointer;
+  display:block; width:100%; border:0; cursor:pointer;
   background:linear-gradient(135deg,var(--navy),var(--navy-dark));
-  color:#fff; font-size:17px; font-weight:700;
+  color:#fff; font-size:17px; font-weight:700; text-align:center; text-decoration:none;
   padding:16px 18px; border-radius:15px;
   box-shadow:0 10px 26px rgba(16,48,126,.35);
   position:relative; overflow:hidden;
@@ -261,6 +261,8 @@ h2{ font-size:21px; line-height:1.3; margin:0 0 16px; letter-spacing:-.01em; }
 .screen.center p{ color:var(--muted); font-size:15.5px; line-height:1.55; max-width:420px; }
 .badge,.oops{ font-size:64px; margin:14px 0 4px; }
 .mt-auto{ margin-top:auto; padding-top:16px; }
+.screen.center{ overflow-y:auto; }
+[data-screen="thankyou"] .mt-auto{ margin-top:22px; margin-bottom:16px; padding-top:0; }
 .link-back{
   display:inline-block; margin-top:14px; color:var(--navy);
   font-size:14px; font-weight:600; text-decoration:none; cursor:pointer;
