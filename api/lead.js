@@ -41,7 +41,7 @@ export default async function handler(req, res) {
       try { body = JSON.parse(raw || '{}'); } catch { body = {}; }
     }
 
-    const { name = '', phone = '', country = '', q1 = '—', q2 = '—', q3 = '—', page = '' } = body || {};
+    const { name = '', phone = '', country = '', q1 = '—', q2 = '—', page = '' } = body || {};
 
     const text =
       '🏢 <b>Нова заявка · Квіз «Нерухомість»</b>\n\n' +
@@ -49,8 +49,7 @@ export default async function handler(req, res) {
       '📞 <b>Телефон:</b> ' + esc(phone) + '\n' +
       '🌍 <b>Країна:</b> ' + esc(country) + '\n\n' +
       '1️⃣ <b>Цікавить:</b> ' + esc(q1) + '\n' +
-      '2️⃣ <b>Досвід:</b> ' + esc(q2) + '\n' +
-      '3️⃣ <b>Готовність:</b> ' + esc(q3) + '\n\n' +
+      '2️⃣ <b>Готовність далі:</b> ' + esc(q2) + '\n\n' +
       '🔗 ' + esc(page);
 
     const tgRes = await fetch('https://api.telegram.org/bot' + TOKEN + '/sendMessage', {
