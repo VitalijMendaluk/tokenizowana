@@ -80,8 +80,9 @@ body{
 .intro-flow{
   flex:1; min-height:0; overflow:hidden;
   display:flex; flex-direction:column;
-  justify-content:space-between; gap:10px;
+  justify-content:flex-start; gap:14px;
 }
+.intro-top{ display:flex; flex-direction:column; gap:11px; }
 h1{ font-size:24px; line-height:1.18; margin:2px 0 0; letter-spacing:-.01em; }
 h1 .gold{
   background:linear-gradient(120deg,var(--gold),#b8901f);
@@ -123,11 +124,14 @@ h1 .gold{
 .avatars span:first-child{ margin-left:0; }
 .social b{ color:var(--ink); }
 
-.videos{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
-.vcard{ cursor:pointer; }
+.videos{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:8px;
+  flex:1 1 auto; min-height:118px; max-height:230px; align-content:stretch;
+}
+.vcard{ cursor:pointer; display:flex; flex-direction:column; min-height:0; }
 .vwrap{
   position:relative; border-radius:13px; overflow:hidden;
-  aspect-ratio:1/1; background:#0a1638; box-shadow:var(--shadow);
+  flex:1 1 auto; min-height:0; background:#0a1638; box-shadow:var(--shadow);
   border:1px solid rgba(212,175,55,.35);
 }
 .vwrap video{ width:100%; height:100%; object-fit:cover; display:block; }
@@ -287,7 +291,7 @@ h2{ font-size:21px; line-height:1.3; margin:0 0 16px; letter-spacing:-.01em; }
   .intro-flow{ gap:7px; }
   .bullets{ gap:5px; }
   .bullets li{ font-size:12px; padding:7px 10px; line-height:1.25; }
-  .vwrap{ aspect-ratio:auto; height:80px; }
+  .videos{ min-height:96px; max-height:180px; }
   .vcap{ font-size:10px; margin-top:4px; }
   .social{ font-size:11.5px; }
   .preblock{ font-size:12px; padding:8px 10px; margin-bottom:8px; }
@@ -298,7 +302,7 @@ h2{ font-size:21px; line-height:1.3; margin:0 0 16px; letter-spacing:-.01em; }
   h1{ font-size:19.5px; }
   .lead{ font-size:12px; line-height:1.25; }
   .bullets li{ font-size:11.5px; padding:6px 9px; }
-  .vwrap{ height:70px; }
+  .videos{ min-height:82px; max-height:132px; }
   .vcap{ font-size:9.5px; margin-top:3px; }
   .eyebrow{ font-size:10px; }
   .preblock{ font-size:11.5px; padding:7px 10px; margin-bottom:6px; }
@@ -316,6 +320,7 @@ h2{ font-size:21px; line-height:1.3; margin:0 0 16px; letter-spacing:-.01em; }
   <!-- ==================== ЕКРАН 1 · ІНТРО ==================== -->
   <section class="screen active" data-screen="intro">
     <div class="intro-flow">
+     <div class="intro-top">
       <div class="eyebrow">Сучасні можливості додаткового доходу</div>
       <h1>Курортна нерухомість як <span class="gold">друге джерело доходу</span>: як це працює сьогодні</h1>
       <p class="lead">Дайте відповідь на 2 короткі запитання та отримайте доступ до відеоогляду, де простими словами розбираємо сучасні моделі участі в курортній нерухомості.</p>
@@ -331,6 +336,7 @@ h2{ font-size:21px; line-height:1.3; margin:0 0 16px; letter-spacing:-.01em; }
         <div class="avatars"><span>І</span><span>Т</span><span>Ю</span><span>+</span></div>
         <div>Уже <b>1500+ людей</b> розібралися в темі</div>
       </div>
+     </div>
 
       <div class="videos">
         <div class="vcard">
